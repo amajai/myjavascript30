@@ -77,7 +77,10 @@
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
     const reduceData = data.reduce((acc, cur) => {
-      acc[cur] = 1
+      if(!acc[cur]){
+        acc[cur] = 0
+      }
+      acc[cur] ++
       return acc
     }, {})
 
