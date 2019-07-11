@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×HUNTER×HUNTER×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = 'green';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Hello')
+    // Interpolated
+    console.log('I am a cool %s percent', 100);
+    // Styled
+    console.log('%c I am a cool style!', 
+    'font-size:18px; text-shadow: 2px 2px 4px green');
+    // warning!
+    console.warn('NOOOO! DONT DO IT!!');
+    // Error :|
+    console.error('Something went wrong!');
+    // Info
+    console.info('You know that you are human');
+    // Testing
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('expend'), 'That class does not exist!')
+    // clearing
+    console.clear()
+    // Viewing DOM Elements
+    console.log(p)
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`My dog name is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old.`)
+      console.log(`${dog.name} is ${dog.age * 7} in dog years.`)
+      console.groupEnd(`${dog.name}`)
+    })
+    // Counting
+    console.count('Jake')
+    console.count('Jake')
+    console.count('Jake')
+    console.count('Sam')
+    console.count('Jake')
+    // Table
+    console.table(dogs)
+    // timing
+    console.time('test')
+    fetch('https://www.reddit.com/.json')
+    .then(blob => blob.json())
+    .then(data => data)
+    console.timeEnd('test')
+  </script>
+</body>
+</html>
