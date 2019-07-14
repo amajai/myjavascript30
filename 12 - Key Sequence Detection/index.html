@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <style>
+    html{
+      background: linear-gradient(135deg, #db7e26 0%,#e08345 48%,#e8a94a 100%)
+    }
+  </style>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+  <p>Hint: It's not chicken</p>
+<script>
+  const secretCode = 'chicken'
+  const entered = []
+  window.addEventListener('keyup', e => {
+    entered.push(e.key)
+    entered.splice(-secretCode.length - 1, entered.length-secretCode.length)
+    if(entered.join('') == secretCode){
+      alert('Congratulations! You have unlocked the page secret!!')
+    }
+  })
+</script>
+</body>
+</html>
